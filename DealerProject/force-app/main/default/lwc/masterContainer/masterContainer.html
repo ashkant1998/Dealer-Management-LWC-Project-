@@ -1,0 +1,16 @@
+<template>
+
+    <div class="slds-var-m-bottom_small">
+        <lightning-card>
+            <!--child Component 1 : Follow kebab case naming convention-->
+            <c-dealer-search onselecteddealertype={handleselecteddealertypeevent}></c-dealer-search>
+        </lightning-card>
+    </div>
+    <div class="slds-var-m-vertical_small">
+        <lightning-card>
+            <!--child Component 2 : Follow kebab case naming convention-->
+            <c-dealer-search-result channel-dealer-type-id={selecteddealertypeId}></c-dealer-search-result>
+        </lightning-card>
+    </div>
+
+</template>

@@ -1,0 +1,49 @@
+<template>
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding="horozontal-small">
+            <lightning-layout>
+
+                <!--coloum 1-->
+                <!--<lightning-layout-item padding="horozontal-small" size="6">-->
+                <!-- app decrp -->
+                <div class="slds-var-p-around_medium lgc-bg">
+                    <ul class="slds-list_vertical-space-medium slds-has-inline-block-links_space">
+                        <li class="slds-item"><span style=" font-weight: bold;">Description: {appDecrp}</span></li>
+                    </ul>
+                </div>
+                <!--</lightning-layout-item>-->
+
+                <!--coloum 2-->
+                <lightning-layout-item padding="horozontal-small" size="6">
+                    <lightning-layout vertical-align="center">
+                        <lightning-layout-item padding="slds-var-m-around_medium around-small" size="12">
+                            <!-- Channel partner combo box -->
+                            <div class="slds-var-p-around_small">
+                                <lightning-combobox name="Dealer Type" value={value} placeholder="Select Dealer Type"
+                                    options={dealerTypes} onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- Action Icons -->
+                            <div class="slds-var-p-around_small slds-align_absolute-center">
+                                <lightning-button-icon icon-name="action:add_relationship" variant="brand"
+                                    alternative-text="Add New Dealer Type" title="Add New Dealer Type"
+                                    onclick={openNewDealerTypeStdPage}></lightning-button-icon>
+
+                                <lightning-button-icon icon-name="action:new_account" variant="brand"
+                                    alternative-text="Add New Account" title="Add New Account"
+                                    class="slds-var-m-left_medium"
+                                    onclick={openNewAccountStdPage}></lightning-button-icon>
+
+                                <lightning-button-icon icon-name="action:new_contact" variant="brand"
+                                    alternative-text="Add New Dealer Contact" title="Add New Dealer Contact"
+                                    class="slds-var-m-left_medium"
+                                    onclick={openNewContactStdPage}></lightning-button-icon>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

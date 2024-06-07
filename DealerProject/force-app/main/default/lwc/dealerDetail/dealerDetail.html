@@ -1,0 +1,41 @@
+<!--sldsValidatorIgnore-->
+<template>
+    <template if:true={IsDealerSelected}>
+        <!-- Show dealer Detail -->
+        <lightning-card title="Dealer Details" icon-name="action:add_contact">
+            <!-- Show Buttons -->
+            <div slot="actions">
+                <lightning-button label="Add Dealer Review" class="slds-var-p-horizontal_small" variant="brand"
+                    onclick={onDealerReviewScreenFlow}></lightning-button>
+                <lightning-button label="Dealer POC Contact Loctaion" class="slds-var-p-horizontal_small"
+                    variant="success" onclick={openContactLocation}></lightning-button>
+            </div>
+            <!-- Details about the selected Dealer -->
+            <div class="slds-box">
+                <lightning-record-view-form object-api-name={objectApi} record-id={selectedDealerAccountId}>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name={accountName}></lightning-output-field>
+                            <lightning-output-field field-name={accContractStartDate}></lightning-output-field>
+                            <lightning-output-field field-name={primarypoc}></lightning-output-field>
+                            <lightning-output-field field-name={budget}></lightning-output-field>
+                            <lightning-output-field field-name={salesRevenue}></lightning-output-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-output-field field-name={activepipeline}></lightning-output-field>
+                            <lightning-output-field field-name={contractEnd}></lightning-output-field>
+                            <lightning-output-field field-name={totalTrained}></lightning-output-field>
+                            <lightning-output-field field-name={partnerLongitude}></lightning-output-field>
+                            <lightning-output-field field-name={partnerLatitude}></lightning-output-field>
+                        </div>
+                    </div>
+                </lightning-record-view-form>
+            </div>
+        </lightning-card>
+
+        <template if:true={showLocation}>
+            <!-- Show Dealer POC Location on a Map -->
+            <c-dealer-contact-location dealer-account-id={selectedDealerAccountId}></c-dealer-contact-location>
+        </template>
+    </template>
+</template>
